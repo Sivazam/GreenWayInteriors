@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Test</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #F7F5F3;
+            color: #2D4A3E;
+            margin: 0;
+            padding: 20px;
+        }
+        .test-box {
+            background-color: #A8B5A0;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .tailwind-test {
+            @apply bg-accent text-white p-4 rounded-lg m-4;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Test Page</h1>
+    <div class="test-box">
+        This should have a green background if CSS is working
+    </div>
+    <div class="tailwind-test">
+        This should have Tailwind styling if working
+    </div>
+    <div class="bg-primary text-primary-foreground p-4 rounded-lg m-4">
+        This should use Tailwind CSS variables
+    </div>
+</body>
+</html>
