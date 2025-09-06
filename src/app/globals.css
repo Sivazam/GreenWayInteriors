@@ -8,76 +8,78 @@
 
 :root {
   --radius: 0.625rem;
-  --background: #F7F5F3;
-  --foreground: #2D4A3E;
-  --card: #F7F5F3;
-  --card-foreground: #2D4A3E;
-  --popover: #F7F5F3;
-  --popover-foreground: #2D4A3E;
-  --primary: #A8B5A0;
-  --primary-foreground: #F7F5F3;
-  --secondary: #E8E6E1;
-  --secondary-foreground: #2D4A3E;
-  --muted: #E8E6E1;
-  --muted-foreground: #5A6B5A;
-  --accent: #C47B5A;
-  --accent-foreground: #F7F5F3;
-  --destructive: #C47B5A;
-  --border: #D4D1C9;
-  --input: #E8E6E1;
-  --ring: #A8B5A0;
-  --chart-1: #A8B5A0;
-  --chart-2: #C47B5A;
-  --chart-3: #2D4A3E;
-  --chart-4: #D4A574;
-  --chart-5: #8B9683;
-  --sidebar: #F7F5F3;
-  --sidebar-foreground: #2D4A3E;
-  --sidebar-primary: #A8B5A0;
-  --sidebar-primary-foreground: #F7F5F3;
-  --sidebar-accent: #E8E6E1;
-  --sidebar-accent-foreground: #2D4A3E;
-  --sidebar-border: #D4D1C9;
-  --sidebar-ring: #A8B5A0;
+  --background: hsl(40 20% 98%);
+  --foreground: hsl(152 24% 15%);
+  --card: hsl(40 20% 98%);
+  --card-foreground: hsl(152 24% 15%);
+  --popover: hsl(40 20% 98%);
+  --popover-foreground: hsl(152 24% 15%);
+  --primary: hsl(120 9% 65%);
+  --primary-foreground: hsl(40 20% 98%);
+  --secondary: hsl(30 14% 89%);
+  --secondary-foreground: hsl(152 24% 15%);
+  --muted: hsl(30 14% 89%);
+  --muted-foreground: hsl(120 9% 40%);
+  --accent: hsl(14 44% 58%);
+  --accent-foreground: hsl(40 20% 98%);
+  --destructive: hsl(14 44% 58%);
+  --destructive-foreground: hsl(40 20% 98%);
+  --border: hsl(20 13% 83%);
+  --input: hsl(30 14% 89%);
+  --ring: hsl(120 9% 65%);
+  --chart-1: hsl(12 76% 61%);
+  --chart-2: hsl(173 58% 39%);
+  --chart-3: hsl(197 37% 24%);
+  --chart-4: hsl(43 74% 66%);
+  --chart-5: hsl(27 87% 67%);
+  --sidebar: hsl(40 20% 98%);
+  --sidebar-foreground: hsl(152 24% 15%);
+  --sidebar-primary: hsl(120 9% 65%);
+  --sidebar-primary-foreground: hsl(40 20% 98%);
+  --sidebar-accent: hsl(30 14% 89%);
+  --sidebar-accent-foreground: hsl(152 24% 15%);
+  --sidebar-border: hsl(20 13% 83%);
+  --sidebar-ring: hsl(120 9% 65%);
 }
 
 .dark {
-  --background: #1A1F1A;
-  --foreground: #F7F5F3;
-  --card: #2D4A3E;
-  --card-foreground: #F7F5F3;
-  --popover: #2D4A3E;
-  --popover-foreground: #F7F5F3;
-  --primary: #A8B5A0;
-  --primary-foreground: #1A1F1A;
-  --secondary: #3A4A3A;
-  --secondary-foreground: #F7F5F3;
-  --muted: #3A4A3A;
-  --muted-foreground: #A8B5A0;
-  --accent: #C47B5A;
-  --accent-foreground: #F7F5F3;
-  --destructive: #D47050;
-  --border: #3A4A3A;
-  --input: #3A4A3A;
-  --ring: #A8B5A0;
-  --chart-1: #A8B5A0;
-  --chart-2: #C47B5A;
-  --chart-3: #5A7B5A;
-  --chart-4: #E4B584;
-  --chart-5: #9BA693;
-  --sidebar: #2D4A3E;
-  --sidebar-foreground: #F7F5F3;
-  --sidebar-primary: #A8B5A0;
-  --sidebar-primary-foreground: #1A1F1A;
-  --sidebar-accent: #3A4A3A;
-  --sidebar-accent-foreground: #F7F5F3;
-  --sidebar-border: #3A4A3A;
-  --sidebar-ring: #A8B5A0;
+  --background: hsl(152 24% 15%);
+  --foreground: hsl(40 20% 98%);
+  --card: hsl(152 24% 15%);
+  --card-foreground: hsl(40 20% 98%);
+  --popover: hsl(152 24% 15%);
+  --popover-foreground: hsl(40 20% 98%);
+  --primary: hsl(120 9% 65%);
+  --primary-foreground: hsl(152 24% 15%);
+  --secondary: hsl(120 9% 40%);
+  --secondary-foreground: hsl(40 20% 98%);
+  --muted: hsl(120 9% 40%);
+  --muted-foreground: hsl(120 9% 65%);
+  --accent: hsl(14 44% 58%);
+  --accent-foreground: hsl(40 20% 98%);
+  --destructive: hsl(14 44% 58%);
+  --destructive-foreground: hsl(40 20% 98%);
+  --border: hsl(120 9% 40%);
+  --input: hsl(120 9% 40%);
+  --ring: hsl(120 9% 65%);
+  --chart-1: hsl(220 70% 50%);
+  --chart-2: hsl(160 60% 45%);
+  --chart-3: hsl(30 80% 55%);
+  --chart-4: hsl(280 65% 60%);
+  --chart-5: hsl(340 75% 55%);
+  --sidebar: hsl(152 24% 15%);
+  --sidebar-foreground: hsl(40 20% 98%);
+  --sidebar-primary: hsl(120 9% 65%);
+  --sidebar-primary-foreground: hsl(152 24% 15%);
+  --sidebar-accent: hsl(120 9% 40%);
+  --sidebar-accent-foreground: hsl(40 20% 98%);
+  --sidebar-border: hsl(120 9% 40%);
+  --sidebar-ring: hsl(120 9% 65%);
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-gray-300 outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
@@ -396,7 +398,7 @@
 
   /* Form styles */
   .form-input {
-    @apply w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all;
+    @apply w-full px-4 py-3 bg-background border border-gray-300 rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all;
   }
 
   .form-label {

@@ -9,8 +9,11 @@ interface SplashScreenProps {
 
 export default function SplashScreen({ onLoadingComplete }: SplashScreenProps) {
   const [progress, setProgress] = useState(0);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
+    
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -24,6 +27,27 @@ export default function SplashScreen({ onLoadingComplete }: SplashScreenProps) {
 
     return () => clearInterval(interval);
   }, [onLoadingComplete]);
+
+  // Prevent hydration mismatch by not rendering on server
+  if (!isMounted) {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-primary to-accent">
+        <div className="text-center">
+          <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-2xl mb-8">
+            <div className="text-5xl font-bold text-accent font-serif">
+              G
+            </div>
+          </div>
+          <h1 className="font-heading text-3xl font-bold text-white mb-2">
+            Greenway Interiors
+          </h1>
+          <p className="font-body text-white/80 mb-8">
+            Premium Interior Design
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-primary to-accent">

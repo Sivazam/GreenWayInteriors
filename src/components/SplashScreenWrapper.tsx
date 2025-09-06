@@ -10,13 +10,18 @@ interface SplashScreenWrapperProps {
 
 export default function SplashScreenWrapper({ children }: SplashScreenWrapperProps) {
   const [showSplash, setShowSplash] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    // Set client-side flag
+    setIsClient(true);
+    
     // Register service worker
     register();
   }, []);
 
-  if (typeof window === 'undefined') {
+  // Only show splash screen on client side
+  if (!isClient) {
     return <>{children}</>;
   }
 

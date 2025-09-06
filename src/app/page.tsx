@@ -9,19 +9,16 @@ import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const [currentPath, setCurrentPath] = useState("/");
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     setCurrentPath(window.location.pathname);
   }, []);
 
   return (
     <div className="min-h-screen bg-background">
-      {/* CSS Test */}
-      <div className="css-test">
-        If you see this with a green background, CSS is working!
-      </div>
-      
-      <Navigation currentPath={currentPath} />
+      <Navigation currentPath={isMounted ? currentPath : "/"} />
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
