@@ -80,18 +80,18 @@ export default function SocketDemo() {
           <ScrollArea className="h-80 w-full border rounded-md p-4">
             <div className="space-y-2">
               {messages.length === 0 ? (
-                <p className="text-gray-500 text-center">No messages yet</p>
+                <p className="text-muted-foreground text-center">No messages yet</p>
               ) : (
                 messages.map((msg, index) => (
                   <div key={index} className="border-b pb-2 last:border-b-0">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-gray-700">
+                        <p className="text-sm font-medium text-foreground">
                           {msg.senderId}
                         </p>
-                        <p className="text-gray-900">{msg.text}</p>
+                        <p className="text-foreground">{msg.text}</p>
                       </div>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-muted-foreground">
                         {new Date(msg.timestamp).toLocaleTimeString()}
                       </span>
                     </div>

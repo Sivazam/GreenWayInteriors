@@ -1,17 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Home, Info, FolderOpen, Mail, Menu, X } from "lucide-react";
+import { Home, Info, FolderOpen, Mail } from "lucide-react";
 
 interface NavigationProps {
   currentPath?: string;
 }
 
 export default function Navigation({ currentPath = "/" }: NavigationProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   const navItems = [
     { href: "/", label: "Home", icon: Home },
     { href: "/about", label: "About", icon: Info },
@@ -26,26 +23,6 @@ export default function Navigation({ currentPath = "/" }: NavigationProps) {
     return currentPath.startsWith(href);
   };
 
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (!target.closest('nav') && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isMobileMenuOpen]);
-
-  // Handle keyboard navigation
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      setIsMobileMenuOpen(false);
-    }
-  };
-
   return (
     <>
       {/* Desktop Navigation */}
@@ -56,7 +33,7 @@ export default function Navigation({ currentPath = "/" }: NavigationProps) {
             <Link 
               href="/" 
               className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-accent rounded-lg"
-              aria-label="Elegant Interiors home"
+              aria-label="Greenway Interiors home"
             >
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -95,12 +72,32 @@ export default function Navigation({ currentPath = "/" }: NavigationProps) {
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Top Navigation - Logo Only */}
+      <nav className="md:hidden fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" role="navigation" aria-label="Mobile top navigation">
+        <div className="flex items-center justify-center h-16">
+          <Link 
+            href="/" 
+            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-accent rounded-lg"
+            aria-label="Greenway Interiors home"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-8 h-8 bg-accent rounded-full flex items-center justify-center"
+              aria-hidden="true"
+            >
+              <span className="text-primary-foreground font-serif font-bold text-lg">G</span>
+            </motion.div>
+            <span className="font-serif text-xl font-bold text-foreground">Greenway Interiors</span>
+          </Link>
+        </div>
+      </nav>
+
+      {/* Mobile Bottom Navigation */}
       <nav 
         className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-t border-border" 
         role="navigation"
         aria-label="Mobile navigation"
-        onKeyDown={handleKeyDown}
       >
         <div className="flex items-center justify-around h-16">
           {navItems.map((item) => (
@@ -125,48 +122,6 @@ export default function Navigation({ currentPath = "/" }: NavigationProps) {
           ))}
         </div>
       </nav>
-
-      {/* Mobile Menu Button (for hamburger menu if needed) */}
-      <div className="md:hidden fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 rounded-lg bg-background/80 backdrop-blur-sm border border-border focus:outline-none focus:ring-2 focus:ring-accent"
-          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isMobileMenuOpen}
-          aria-controls="mobile-menu"
-        >
-          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        </button>
-      </div>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="md:hidden fixed top-0 left-0 right-0 z-40 bg-background/95 backdrop-blur-sm border-b border-border"
-          id="mobile-menu"
-          role="menu"
-          onKeyDown={handleKeyDown}
-        >
-          <div className="px-4 py-6 space-y-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block font-body text-lg font-medium transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent rounded px-2 py-1 ${
-                  isActive(item.href) ? "text-accent" : "text-foreground"
-                }`}
-                role="menuitem"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-      )}
     </>
   );
 }

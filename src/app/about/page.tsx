@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Award, Users, Clock, Lightbulb } from "lucide-react";
 
@@ -235,6 +236,8 @@ export default function About() {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }

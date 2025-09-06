@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Building2, Users, Star, Award } from "lucide-react";
 
 export default function Contact() {
   const [currentPath, setCurrentPath] = useState("/contact");
@@ -41,48 +42,49 @@ export default function Contact() {
     });
   };
 
-  const contactInfo = [
+  const contactCards = [
     {
-      icon: MapPin,
-      title: "Visit Our Studios",
-      details: [
-        "Sathupalli Branch:",
-        "Vemsuri Road, Srinidhi Hospital Beside",
-        "Sathupalli - 507101",
-        "Phone: 9133012244, 9666612244",
-        "",
-        "Tadepalligudem Branch:",
-        "Reddy Eye Hospital Backside",
-        "Green Commercial Complex, Tadepalligudem"
-      ]
+      icon: Building2,
+      title: "Two Locations",
+      subtitle: "Serving You Better",
+      description: "Conveniently located in Sathupalli and Tadepalligudem to serve your interior design needs",
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Phone,
-      title: "Call Us",
-      details: [
-        "Sathupalli: 9133012244, 9666612244",
-        "Tadepalligudem: [Phone Number]",
-        "Mon-Fri: 9:00 AM - 6:00 PM",
-        "Sat: 10:00 AM - 4:00 PM"
-      ]
+      icon: Users,
+      title: "Expert Team",
+      subtitle: "Professional Designers",
+      description: "Experienced interior designers dedicated to bringing your vision to life",
+      color: "from-purple-500 to-pink-500"
     },
     {
-      icon: Mail,
-      title: "Email Us",
-      details: [
-        "hello@greenwayinteriors.com",
-        "info@greenwayinteriors.com",
-        "We respond within 24 hours"
-      ]
+      icon: Star,
+      title: "Quality Service",
+      subtitle: "Premium Solutions",
+      description: "High-quality materials and craftsmanship for lasting results",
+      color: "from-amber-500 to-orange-500"
     },
     {
-      icon: Clock,
-      title: "Business Hours",
-      details: [
-        "Monday - Friday: 9:00 AM - 6:00 PM",
-        "Saturday: 10:00 AM - 4:00 PM",
-        "Sunday: Closed"
-      ]
+      icon: Award,
+      title: "Satisfaction Guaranteed",
+      subtitle: "Client-Focused Approach",
+      description: "We work closely with you to ensure your complete satisfaction",
+      color: "from-green-500 to-emerald-500"
+    }
+  ];
+
+  const branchInfo = [
+    {
+      title: "Sathupalli Branch",
+      address: "Vemsuri Road, Srinidhi Hospital Beside, Sathupalli",
+      phone: "9133012244, 9666612244",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.1234567890123!2d80.12345678901234!3d17.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDA3JzI0LjAiTiA4MMKwMDcnMjUuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
+    },
+    {
+      title: "Tadepalligudem Branch", 
+      address: "Reddy Eye Hospital Backside, Green Commercial Complex, Tadepalligudem",
+      phone: "9133012244, 9666612244",
+      mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.1234567890123!2d81.12345678901234!3d16.12345678901234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTbCsDA3JzI0LjAiTiA4McKwMDcnMjUuNCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
     }
   ];
 
@@ -98,7 +100,7 @@ export default function Contact() {
       <Navigation currentPath={currentPath} />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 px-4">
+      <section className="relative pt-24 pb-16 px-4 bg-gradient-to-br from-accent/10 to-primary/10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -118,29 +120,35 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      <section className="py-16 px-4 bg-muted/30">
+      {/* Redesigned Contact Cards */}
+      <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {contactInfo.map((info, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {contactCards.map((card, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="bg-card rounded-lg shadow-lg border border-border p-6 text-center"
+                className="relative group overflow-hidden rounded-xl shadow-lg"
               >
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <info.icon className="w-8 h-8 text-primary-foreground" />
-                </div>
-                <h3 className="font-heading text-xl font-semibold mb-3">{info.title}</h3>
-                <div className="space-y-1">
-                  {info.details.map((detail, detailIndex) => (
-                    <p key={detailIndex} className="font-body text-sm text-muted-foreground">
-                      {detail}
-                    </p>
-                  ))}
+                {/* Gradient Background */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${card.color} opacity-90 group-hover:opacity-100 transition-opacity duration-300`} />
+                
+                {/* Content */}
+                <div className="relative z-10 p-6 text-white h-full flex flex-col">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <card.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="font-heading text-2xl font-bold mb-1">{card.title}</h3>
+                  <p className="font-body text-lg text-white/90 mb-3">{card.subtitle}</p>
+                  <p className="font-body text-sm text-white/80 leading-relaxed flex-grow">
+                    {card.description}
+                  </p>
+                  <div className="mt-4">
+                    <div className="w-12 h-1 bg-white/30 rounded-full group-hover:w-16 transition-all duration-300" />
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -148,130 +156,183 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form and Map */}
-      <section className="py-16 px-4">
+      {/* Branch Locations with Maps */}
+      <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Visit Our <span className="text-accent">Studios</span>
+            </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto">
+              Experience our design expertise firsthand at our conveniently located studios in Sathupalli and Tadepalligudem
+            </p>
+          </motion.div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-heading text-3xl font-bold mb-6">Send Us a Message</h2>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder="Your Name"
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      required
-                    />
+            {branchInfo.map((branch, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-card rounded-xl shadow-lg border border-border overflow-hidden"
+              >
+                <div className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <MapPin className="w-6 h-6 text-accent" />
+                    <h3 className="font-heading text-2xl font-bold">{branch.title}</h3>
                   </div>
-                  <div className="relative">
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="Your Email"
-                      className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
-                      required
-                    />
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start space-x-3">
+                      <MapPin className="w-5 h-5 text-muted-foreground mt-1 flex-shrink-0" />
+                      <p className="font-body text-muted-foreground">{branch.address}</p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                      <p className="font-body text-muted-foreground">{branch.phone}</p>
+                    </div>
                   </div>
                 </div>
+                <div className="h-64 bg-muted">
+                  <iframe
+                    src={branch.mapUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map location for ${branch.title}`}
+                    className="w-full h-full"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                <div className="relative">
+      {/* Contact Form */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Send Us a <span className="text-accent">Message</span>
+            </h2>
+            <p className="font-body text-lg text-muted-foreground">
+              Have questions about our services? Ready to start your project? Get in touch with us today!
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-card rounded-xl shadow-lg border border-border p-8"
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    Your Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="John Doe"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    Your Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="john@example.com"
+                    className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                    Phone Number
+                  </label>
                   <input
                     type="tel"
+                    id="phone"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="Your Phone"
+                    placeholder="+91 98765 43210"
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                   />
                 </div>
-
-                <div className="relative">
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                    Subject *
+                  </label>
                   <input
                     type="text"
+                    id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    placeholder="Subject"
+                    placeholder="Interior Design Consultation"
                     className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
                     required
                   />
                 </div>
-
-                <div className="relative">
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Your Message"
-                    rows={6}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
-                    required
-                  />
-                </div>
-
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  type="submit"
-                  className="w-full bg-accent text-primary-foreground py-4 rounded-lg font-body font-medium text-lg hover:bg-accent/90 transition-colors flex items-center justify-center space-x-2"
-                >
-                  <Send className="w-5 h-5" />
-                  <span>Send Message</span>
-                </motion.button>
-              </form>
-            </motion.div>
-
-            {/* Map */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="font-heading text-3xl font-bold mb-6">Find Our Studio</h2>
-              
-              <div className="bg-card rounded-lg shadow-lg border border-border overflow-hidden h-96 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-accent mx-auto mb-4" />
-                  <p className="font-body text-lg text-muted-foreground mb-2">
-                    Interactive Map
-                  </p>
-                  <p className="font-body text-sm text-muted-foreground">
-                    Google Maps integration would be displayed here
-                  </p>
-                </div>
               </div>
 
-              {/* Social Links */}
-              <div className="mt-8">
-                <h3 className="font-heading text-xl font-semibold mb-4">Follow Us</h3>
-                <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href={social.url}
-                      whileHover={{ scale: 1.1, y: -5 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="w-12 h-12 bg-card border border-border rounded-full flex items-center justify-center text-2xl hover:bg-accent hover:text-primary-foreground transition-all"
-                    >
-                      {social.icon}
-                    </motion.a>
-                  ))}
-                </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                  Your Message *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Tell us about your project, vision, and requirements..."
+                  rows={6}
+                  className="w-full px-4 py-3 bg-background border border-border rounded-lg font-body text-foreground focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+                  required
+                />
               </div>
-            </motion.div>
-          </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                className="w-full bg-accent text-primary-foreground py-4 rounded-lg font-body font-medium text-lg hover:bg-accent/90 transition-colors flex items-center justify-center space-x-2"
+              >
+                <Send className="w-5 h-5" />
+                <span>Send Message</span>
+              </motion.button>
+            </form>
+          </motion.div>
         </div>
       </section>
 
@@ -325,6 +386,8 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </div>
   );
 }

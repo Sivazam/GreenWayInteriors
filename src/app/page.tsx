@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import ImageMosaic from "@/components/ImageMosaic";
 import Testimonials from "@/components/Testimonials";
 import { motion } from "framer-motion";
@@ -62,7 +63,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="font-body text-lg md:text-xl text-gray-300 mb-8 leading-relaxed"
+              className="font-body text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
             >
               Discover the perfect blend of aesthetics and functionality with our premium interior design services. We create spaces that inspire, comfort, and reflect your unique personality across our Sathupalli and Tadepalligudem locations.
             </motion.p>
@@ -134,13 +135,15 @@ export default function Home() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-accent px-8 py-4 rounded-lg font-body font-medium text-lg hover:bg-gray-100 transition-colors"
+              className="bg-card text-accent px-8 py-4 rounded-lg font-body font-medium text-lg hover:bg-muted transition-colors"
             >
               Get Started Today
             </motion.button>
           </motion.div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }

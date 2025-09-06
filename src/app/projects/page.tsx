@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Filter, Eye, Heart } from "lucide-react";
 
@@ -242,6 +243,8 @@ export default function Projects() {
           </motion.div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 }
