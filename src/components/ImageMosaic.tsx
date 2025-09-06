@@ -82,13 +82,13 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
                   <div className="text-center text-white p-4">
                     <h3 className="font-heading text-lg font-semibold mb-1">{image.title}</h3>
                     <p className="font-body text-sm">{image.category}</p>
-                    <motion.button
+                    {/* <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="mt-3 bg-accent text-white px-4 py-2 rounded-lg text-sm font-body"
                     >
                       View Project
-                    </motion.button>
+                    </motion.button> */}
                   </div>
                 </div>
               </div>

@@ -25,7 +25,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
       name: "Sarah Johnson",
       role: "Homeowner",
       company: "Residential Client",
-      content: "Elegant Interiors transformed our house into a dream home. Their attention to detail and understanding of our vision was exceptional. The team was professional, creative, and delivered beyond our expectations.",
+      content: "Greenway Interiors transformed our house into a dream home. Their attention to detail and understanding of our vision was exceptional. The team was professional, creative, and delivered beyond our expectations.",
       rating: 5
     },
     {
@@ -33,7 +33,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
       name: "Michael Chen",
       role: "CEO",
       company: "TechCorp Inc.",
-      content: "Working with Elegant Interiors on our office redesign was a fantastic experience. They created a space that perfectly balances functionality with modern aesthetics. Our team loves the new environment!",
+      content: "Working with Greenway Interiors on our office redesign was a fantastic experience. They created a space that perfectly balances functionality with modern aesthetics. Our team loves the new environment!",
       rating: 5
     },
     {
@@ -41,7 +41,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
       name: "Emma Rodriguez",
       role: "General Manager",
       company: "Grand Hotel",
-      content: "The hotel lobby redesign exceeded all our expectations. Elegant Interiors captured the luxury and sophistication we wanted while maintaining practical functionality. Guest feedback has been overwhelmingly positive.",
+      content: "The hotel lobby redesign exceeded all our expectations. Greenway Interiors captured the luxury and sophistication we wanted while maintaining practical functionality. Guest feedback has been overwhelmingly positive.",
       rating: 5
     },
     {
@@ -57,7 +57,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
       name: "Lisa Thompson",
       role: "Marketing Director",
       company: "Retail Solutions",
-      content: "Our retail store redesign has significantly increased customer engagement and sales. Elegant Interiors created an inviting shopping experience that perfectly represents our brand.",
+      content: "Our retail store redesign has significantly increased customer engagement and sales. Greenway Interiors created an inviting shopping experience that perfectly represents our brand.",
       rating: 5
     },
     {
@@ -65,7 +65,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
       name: "Robert Martinez",
       role: "Property Developer",
       company: "Skyline Properties",
-      content: "The team at Elegant Interiors consistently delivers outstanding results across all our residential projects. Their expertise in space planning and design is unmatched in the industry.",
+      content: "The team at Greenway Interiors consistently delivers outstanding results across all our residential projects. Their expertise in space planning and design is unmatched in the industry.",
       rating: 5
     }
   ];
@@ -181,7 +181,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
         </div>
 
         {/* Navigation Controls */}
-        <div className="flex justify-center mt-8 space-x-4">
+        {/* <div className="flex justify-center mt-8 space-x-4">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -202,7 +202,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
           >
             <ChevronRight className="w-5 h-5" />
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

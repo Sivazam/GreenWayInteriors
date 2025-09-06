@@ -31,8 +31,16 @@ export default function Home() {
             loop
             playsInline
             className="w-full h-full object-cover"
+            style={{
+              objectFit: 'cover',
+              width: '100%',
+              height: '100%',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+            }}
           >
-            <source src="/interior-video.mp4" type="video/mp4" />
+            <source src="/interior-video.webm" type="video/webm" />
             {/* Fallback image */}
             <img
               src="/interior-fallback.jpg"

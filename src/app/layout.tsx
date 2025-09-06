@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Playfair_Display, Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
-import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
 import SplashScreenWrapper from "@/components/SplashScreenWrapper";
 
 const playfairDisplay = Playfair_Display({
@@ -82,14 +81,10 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay.variable} ${montserrat.variable} ${raleway.variable} antialiased bg-background text-foreground font-sans`}
       >
-        <a href="#main-content" className="skip-to-content">
-          Skip to main content
-        </a>
         <SplashScreenWrapper>
           <main id="main-content">
             {children}
           </main>
-          <ServiceWorkerRegister />
           <Toaster />
         </SplashScreenWrapper>
       </body>

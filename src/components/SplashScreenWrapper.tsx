@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import SplashScreen from "./SplashScreen";
-import { register } from "@/lib/serviceWorker";
 
 interface SplashScreenWrapperProps {
   children: React.ReactNode;
@@ -10,19 +9,23 @@ interface SplashScreenWrapperProps {
 
 export default function SplashScreenWrapper({ children }: SplashScreenWrapperProps) {
   const [showSplash, setShowSplash] = useState(true);
-  const [isClient, setIsClient] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     // Set client-side flag
-    setIsClient(true);
+    setIsMounted(true);
     
-    // Register service worker
-    register();
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  // Only show splash screen on client side
-  if (!isClient) {
-    return <>{children}</>;
+  // Always show splash screen first on client side
+  if (!isMounted) {
+    return <SplashScreen onLoadingComplete={() => {}} />;
   }
 
   return (

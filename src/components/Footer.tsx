@@ -2,9 +2,30 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, ArrowUp, MessageCircle } from "lucide-react";
 
 export default function Footer() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show scroll-to-top button when user scrolls halfway down the page
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      if (scrollPosition > (documentHeight - windowHeight) / 2) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -211,24 +232,36 @@ export default function Footer() {
       </div>
 
       {/* Floating Buttons */}
-      <motion.button
-        onClick={scrollToTop}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 left-8 w-12 h-12 bg-accent text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-accent/90 transition-colors z-40"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp className="w-6 h-6" />
-      </motion.button>
+      {showScrollTop && (
+        <motion.button
+          onClick={scrollToTop}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="fixed bottom-24 left-8 w-12 h-12 bg-accent text-primary-foreground rounded-full shadow-lg flex items-center justify-center hover:bg-accent/90 transition-colors z-40"
+          aria-label="Scroll to top"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+        >
+          <ArrowUp className="w-6 h-6" />
+        </motion.button>
+      )}
 
       <motion.button
         onClick={openWhatsApp}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        className="fixed bottom-8 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-colors z-40"
+        className="fixed bottom-24 right-8 w-14 h-14 bg-green-500 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-colors z-40"
         aria-label="Contact us on WhatsApp"
       >
-        <MessageCircle className="w-8 h-8" />
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path d="M20.52 3.48A11.85 11.85 0 0012 0a11.85 11.85 0 00-8.52 3.48A11.85 11.85 0 000 12c0 2.1.55 4.16 1.6 5.95L0 24l6.3-1.64A11.89 11.89 0 0012 24a11.85 11.85 0 008.52-3.48A11.85 11.85 0 0024 12c0-3.18-1.24-6.16-3.48-8.52zM12 21.4c-1.82 0-3.59-.48-5.15-1.38l-.37-.21-3.74.98 1-3.64-.24-.37A9.42 9.42 0 012.6 12c0-5.2 4.2-9.4 9.4-9.4s9.4 4.2 9.4 9.4-4.2 9.4-9.4 9.4zm5.42-7.12c-.3-.15-1.78-.88-2.05-.97-.27-.1-.47-.15-.67.15s-.77.97-.95 1.17c-.18.2-.35.22-.65.07-.3-.15-1.26-.47-2.4-1.5-.89-.8-1.5-1.77-1.67-2.07-.18-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5 0 1.48 1.08 2.9 1.23 3.1.15.2 2.12 3.23 5.12 4.52.72.3 1.28.48 1.72.62.72.23 1.38.2 1.9.12.58-.09 1.78-.73 2.03-1.45.25-.73.25-1.35.17-1.47-.07-.12-.27-.2-.57-.35z" />
+          </svg>
       </motion.button>
     </footer>
   );
