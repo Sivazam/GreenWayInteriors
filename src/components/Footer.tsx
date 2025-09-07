@@ -223,12 +223,12 @@ export default function Footer() {
                       {detail.numbers?.map((phone, phoneIndex) => (
                         <motion.a
                           key={phoneIndex}
-                          href={`tel:${phone.value}`}
+                          href={`tel:+91${phone.value}`}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
-                          className="font-body font-medium text-foreground hover:text-accent transition-colors inline-block cursor-pointer"
+                          className="font-body font-medium text-foreground hover:text-accent transition-colors block cursor-pointer"
                         >
-                          . {phone.display} .  
+                          {phone.display}
                         </motion.a>
                       ))}
                     </div>

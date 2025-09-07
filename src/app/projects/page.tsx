@@ -69,7 +69,7 @@ export default function Projects() {
       title: "Restaurant Interior",
       category: "hospitality",
       description: "Intimate dining space with ambient lighting and acoustics",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      image: "https://plus.unsplash.com/premium_photo-1661962950572-61c3b7b4d5ba?q=80&w=1269&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Restaurant", "Dining", "Ambient"]
     }
   ];

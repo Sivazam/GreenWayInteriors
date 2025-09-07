@@ -538,102 +538,6 @@ export default function Contact() {
       </section>
 
 
-      {/* Branch Locations with Maps */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              Visit Our <span className="text-accent">Studios</span>
-            </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto">
-              Experience our design expertise firsthand at our conveniently located studios in Sathupalli and Tadepalligudem
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {branchInfo.map((branch, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className="bg-card rounded-xl shadow-lg border border-border overflow-hidden hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="p-6">
-                  <div className="flex items-center space-x-3 mb-4">
-                    <MapPin className="w-6 h-6 text-accent" />
-                    <h3 className="font-heading text-2xl font-bold">{branch.title}</h3>
-                  </div>
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-start space-x-3">
-                      <MapPin className="w-5 h-5 text-muted-foreground mt-1 flex-shrink-0" />
-                      <p className="font-body text-muted-foreground">{branch.address}</p>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Phone className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                      <p className="font-body text-muted-foreground">{branch.phone}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="h-64 bg-muted">
-                  <iframe
-                    src={branch.mapUrl}
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`Map location for ${branch.title}`}
-                    className="w-full h-full"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Media Section */}
-      <section className="py-12 px-4 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
-              Follow Us on <span className="text-accent">Social Media</span>
-            </h2>
-            <p className="font-body text-muted-foreground mb-8">
-              Stay updated with our latest projects, design tips, and inspiration
-            </p>
-            <div className="flex justify-center space-x-6">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.url}
-                  target={social.name !== "Email" ? "_blank" : undefined}
-                  rel={social.name !== "Email" ? "noopener noreferrer" : undefined}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.9 }}
-                  className={`w-16 h-16 bg-card border border-border rounded-xl shadow-lg flex items-center justify-center text-muted-foreground hover:shadow-xl transition-all duration-300 ${social.color}`}
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-8 h-8" />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-
       {/* Contact Form */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="max-w-4xl mx-auto">
@@ -753,6 +657,69 @@ export default function Contact() {
         </div>
       </section>
 
+
+      {/* Branch Locations with Maps */}
+      <section className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Visit Our <span className="text-accent">Studios</span>
+            </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto">
+              Experience our design expertise firsthand at our conveniently located studios in Sathupalli and Tadepalligudem
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {branchInfo.map((branch, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index === 0 ? -50 : 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-card rounded-xl shadow-lg border border-border overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="p-6">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <MapPin className="w-6 h-6 text-accent" />
+                    <h3 className="font-heading text-2xl font-bold">{branch.title}</h3>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-start space-x-3">
+                      <MapPin className="w-5 h-5 text-muted-foreground mt-1 flex-shrink-0" />
+                      <p className="font-body text-muted-foreground">{branch.address}</p>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <Phone className="w-5 h-5 text-muted-foreground flex-shrink-0" />
+                      <p className="font-body text-muted-foreground">{branch.phone}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="h-64 bg-muted">
+                  <iframe
+                    src={branch.mapUrl}
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`Map location for ${branch.title}`}
+                    className="w-full h-full"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+
       {/* FAQ Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -803,6 +770,43 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+
+      {/* Social Media Section */}
+      <section className="py-12 px-4 bg-muted/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
+              Follow Us on <span className="text-accent">Social Media</span>
+            </h2>
+            <p className="font-body text-muted-foreground mb-8">
+              Stay updated with our latest projects, design tips, and inspiration
+            </p>
+            <div className="flex justify-center space-x-6">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.url}
+                  target={social.name !== "Email" ? "_blank" : undefined}
+                  rel={social.name !== "Email" ? "noopener noreferrer" : undefined}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`w-16 h-16 bg-card border border-border rounded-xl shadow-lg flex items-center justify-center text-muted-foreground hover:shadow-xl transition-all duration-300 ${social.color}`}
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-8 h-8" />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+
 
       <Footer />
     </div>
