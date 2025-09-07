@@ -187,13 +187,13 @@ export default function FeaturedProjectsCarousel({ projects = [] }: FeaturedProj
                       </span>
                     </div>
 
-                    <motion.button
+                    {/* <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       className="bg-accent text-primary-foreground px-6 py-3 rounded-lg font-body font-medium hover:bg-accent/90 transition-colors self-start"
                     >
                       View Project Details
-                    </motion.button>
+                    </motion.button> */}
                   </div>
                 </div>
               </motion.div>

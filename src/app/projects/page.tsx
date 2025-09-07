@@ -172,13 +172,13 @@ export default function Projects() {
                     {project.description}
                   </p>
                   
-                  <motion.button
+                  {/* <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-full bg-accent text-primary-foreground py-2 rounded-lg font-body font-medium hover:bg-accent/90 transition-colors"
                   >
                     View Project Details
-                  </motion.button>
+                  </motion.button> */}
                 </div>
               </motion.div>
             ))}

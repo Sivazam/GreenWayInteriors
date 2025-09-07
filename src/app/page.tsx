@@ -242,7 +242,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0 bg-gradient-to-br from-accent/20 to-primary/20" />
 
         {/* Black Overlay */}
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-black/50 z-10" />
 
         {/* Hero Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">

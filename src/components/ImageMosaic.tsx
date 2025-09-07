@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 interface ImageMosaicProps {
   images?: Array<{
@@ -21,7 +22,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Residential", 
       height: "tall" as const,
       imageUrl: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Sidekix Media"
+      photographer: "GWY INT"
     },
     { 
       id: 2, 
@@ -163,6 +164,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
           viewport={{ once: true }}
           className="text-center mt-12"
         >
+          <Link href="/projects">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -170,6 +172,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
           >
             View Full Portfolio
           </motion.button>
+          </Link>
         </motion.div>
       </div>
     </section>

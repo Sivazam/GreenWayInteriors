@@ -41,7 +41,7 @@ export default function Footer() {
   };
 
   const openWhatsApp = () => {
-    const phoneNumber = '9999999999';
+    const phoneNumber = '9133012244';
     const message = 'Hi Greenway Interiors !!';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -228,7 +228,7 @@ export default function Footer() {
                           whileTap={{ scale: 0.95 }}
                           className="font-body font-medium text-foreground hover:text-accent transition-colors inline-block cursor-pointer"
                         >
-                           {phone.display}  | 
+                          . {phone.display} .  
                         </motion.a>
                       ))}
                     </div>
