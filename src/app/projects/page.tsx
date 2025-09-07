@@ -222,7 +222,6 @@ export default function Projects() {
               </motion.button>
             </motion.div>
           </Link>
-        </div>
       </section>
       
       <Footer />
