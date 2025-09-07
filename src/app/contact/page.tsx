@@ -537,39 +537,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Social Media Section */}
-      <section className="py-12 px-4 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
-              Follow Us on <span className="text-accent">Social Media</span>
-            </h2>
-            <p className="font-body text-muted-foreground mb-8">
-              Stay updated with our latest projects, design tips, and inspiration
-            </p>
-            <div className="flex justify-center space-x-6">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.url}
-                  target={social.name !== "Email" ? "_blank" : undefined}
-                  rel={social.name !== "Email" ? "noopener noreferrer" : undefined}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.9 }}
-                  className={`w-16 h-16 bg-card border border-border rounded-xl shadow-lg flex items-center justify-center text-muted-foreground hover:shadow-xl transition-all duration-300 ${social.color}`}
-                  aria-label={social.name}
-                >
-                  <social.icon className="w-8 h-8" />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Branch Locations with Maps */}
       <section className="py-16 px-4">
@@ -631,6 +598,41 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* Social Media Section */}
+      <section className="py-12 px-4 bg-muted/30">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="font-heading text-2xl md:text-3xl font-bold mb-6">
+              Follow Us on <span className="text-accent">Social Media</span>
+            </h2>
+            <p className="font-body text-muted-foreground mb-8">
+              Stay updated with our latest projects, design tips, and inspiration
+            </p>
+            <div className="flex justify-center space-x-6">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={index}
+                  href={social.url}
+                  target={social.name !== "Email" ? "_blank" : undefined}
+                  rel={social.name !== "Email" ? "noopener noreferrer" : undefined}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  whileTap={{ scale: 0.9 }}
+                  className={`w-16 h-16 bg-card border border-border rounded-xl shadow-lg flex items-center justify-center text-muted-foreground hover:shadow-xl transition-all duration-300 ${social.color}`}
+                  aria-label={social.name}
+                >
+                  <social.icon className="w-8 h-8" />
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
 
       {/* Contact Form */}
       <section className="py-16 px-4 bg-muted/30">
