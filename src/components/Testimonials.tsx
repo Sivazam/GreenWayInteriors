@@ -22,7 +22,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
   const defaultTestimonials: Testimonial[] = [
     {
       id: 1,
-      name: "Sarah Johnson",
+      name: "Lakshmi prasuna",
       role: "Homeowner",
       company: "Residential Client",
       content: "Greenway Interiors transformed our house into a dream home. Their attention to detail and understanding of our vision was exceptional. The team was professional, creative, and delivered beyond our expectations.",
@@ -30,44 +30,45 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
     },
     {
       id: 2,
-      name: "Michael Chen",
+      name: "Suresh Reddy",
       role: "CEO",
-      company: "TechCorp Inc.",
+      company: "TechNova Solutions",
       content: "Working with Greenway Interiors on our office redesign was a fantastic experience. They created a space that perfectly balances functionality with modern aesthetics. Our team loves the new environment!",
       rating: 5
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
+      name: "Anitha sri",
       role: "General Manager",
-      company: "Grand Hotel",
+      company: "Coral Bay Hotel",
       content: "The hotel lobby redesign exceeded all our expectations. Greenway Interiors captured the luxury and sophistication we wanted while maintaining practical functionality. Guest feedback has been overwhelmingly positive.",
       rating: 5
     },
     {
       id: 4,
-      name: "David Kim",
+      name: "Pradeep raju",
       role: "Restaurant Owner",
-      company: "Bella Vista",
+      company: "Malabar Spice",
       content: "The restaurant interior design created the perfect ambiance for our dining concept. The team understood our brand identity and translated it into a beautiful, functional space that our customers love.",
       rating: 5
     },
     {
       id: 5,
-      name: "Lisa Thompson",
+      name: "Divya vani",
       role: "Marketing Director",
-      company: "Retail Solutions",
+      company: "Trendz Retail",
       content: "Our retail store redesign has significantly increased customer engagement and sales. Greenway Interiors created an inviting shopping experience that perfectly represents our brand.",
       rating: 5
     },
     {
       id: 6,
-      name: "Robert Martinez",
+      name: "Madhan",
       role: "Property Developer",
-      company: "Skyline Properties",
+      company: "Skyline Constructions",
       content: "The team at Greenway Interiors consistently delivers outstanding results across all our residential projects. Their expertise in space planning and design is unmatched in the industry.",
       rating: 5
     }
+
   ];
 
   const testimonialList = testimonials.length > 0 ? testimonials : defaultTestimonials;

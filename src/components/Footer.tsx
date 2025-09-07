@@ -58,7 +58,7 @@ export default function Footer() {
 
   const contactDetails = [
     { icon: Phone, label: "Phone", value: "9133012244, 9666612244" },
-    { icon: Mail, label: "Email", value: "hello@greenwayinteriors.com" },
+    { icon: Mail, label: "Email", value: "info@greenwayinteriors.com" },
     { icon: Clock, label: "Hours", value: "Mon-Fri: 9AM-6PM, Sat: 10AM-4PM" }
   ];
 
@@ -66,17 +66,17 @@ export default function Footer() {
     { icon: Facebook, label: "Facebook", href: "#" },
     { icon: Instagram, label: "Instagram", href: "#" },
     { icon: Linkedin, label: "LinkedIn", href: "#" },
-    { icon: Mail, label: "Email", href: "mailto:hello@greenwayinteriors.com" }
+    { icon: Mail, label: "Email", href: "mailto:info@greenwayinteriors.com" }
   ];
 
   const footerLinks = [
     {
       title: "Services",
       links: [
-        { name: "Residential Design", href: "#" },
-        { name: "Commercial Design", href: "#" },
-        { name: "Space Planning", href: "#" },
-        { name: "3D Visualization", href: "#" }
+        { name: "Residential Design", href: "/projects" },
+        { name: "Commercial Design", href: "/projects" },
+        { name: "Space Planning", href: "/projects" },
+        { name: "3D Visualization", href: "/projects" }
       ]
     },
     {
@@ -85,18 +85,17 @@ export default function Footer() {
         { name: "About Us", href: "/about" },
         { name: "Projects", href: "/projects" },
         { name: "Contact", href: "/contact" },
-        { name: "Careers", href: "#" }
       ]
     },
-    {
-      title: "Resources",
-      links: [
-        { name: "Blog", href: "#" },
-        { name: "FAQ", href: "/contact#faq" },
-        { name: "Testimonials", href: "#" },
-        { name: "Design Guide", href: "#" }
-      ]
-    }
+    // {
+    //   title: "Resources",
+    //   links: [
+    //     { name: "Blog", href: "#" },
+    //     { name: "FAQ", href: "/contact#faq" },
+    //     { name: "Testimonials", href: "#" },
+    //     { name: "Design Guide", href: "#" }
+    //   ]
+    // }
   ];
 
   return (

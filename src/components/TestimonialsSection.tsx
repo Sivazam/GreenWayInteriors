@@ -20,54 +20,55 @@ interface TestimonialsSectionProps {
 
 export default function TestimonialsSection({ testimonials = [] }: TestimonialsSectionProps) {
   const defaultTestimonials: Testimonial[] = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      role: "Homeowner",
-      company: "Residential Client",
-      content: "Elegant Interiors transformed our house into a dream home. Their attention to detail and creative vision exceeded all our expectations. The team was professional, responsive, and truly understood our style.",
-      rating: 5
-    },
-    {
-      id: 2,
-      name: "Michael Chen",
-      role: "CEO",
-      company: "TechCorp Solutions",
-      content: "Working with Elegant Interiors on our office redesign was an absolute pleasure. They created a space that perfectly balances functionality with aesthetic appeal. Our team loves the new environment!",
-      rating: 5
-    },
-    {
-      id: 3,
-      name: "Emma Rodriguez",
-      role: "General Manager",
-      company: "Grand Hotel Boutique",
-      content: "The hotel lobby redesign by Elegant Interiors has received countless compliments from our guests. They captured the essence of luxury and comfort we wanted to convey. Highly recommended!",
-      rating: 5
-    },
-    {
-      id: 4,
-      name: "David Kim",
-      role: "Restaurant Owner",
-      company: "Bella Vista",
-      content: "The restaurant interior design created the perfect ambiance for our dining concept. Customer feedback has been overwhelmingly positive, and we've seen a significant increase in return visits.",
-      rating: 5
-    },
-    {
-      id: 5,
-      name: "Lisa Thompson",
-      role: "Marketing Director",
-      company: "Fashion Forward Retail",
-      content: "Elegant Interiors understood our brand identity perfectly and translated it into an amazing retail space. The design has significantly improved our customer experience and sales.",
-      rating: 5
-    },
-    {
-      id: 6,
-      name: "Robert Martinez",
-      role: "Property Developer",
-      company: "Urban Living Developments",
-      content: "We've partnered with Elegant Interiors on multiple projects, and they consistently deliver exceptional results. Their designs add tremendous value to our properties.",
-      rating: 5
-    }
+  {
+    id: 1,
+    name: "Meera",
+    role: "Homeowner",
+    company: "Residential Client",
+    content: "Elegant Interiors transformed our house into a dream home. Their attention to detail and creative vision exceeded all our expectations. The team was professional, responsive, and truly understood our style.",
+    rating: 5
+  },
+  {
+    id: 2,
+    name: "Vikram Reddy",
+    role: "CEO",
+    company: "TechSphere Solutions",
+    content: "Working with Elegant Interiors on our office redesign was an absolute pleasure. They created a space that perfectly balances functionality with aesthetic appeal. Our team loves the new environment!",
+    rating: 5
+  },
+  {
+    id: 3,
+    name: "Anusha",
+    role: "General Manager",
+    company: "Lotus Bay Hotel",
+    content: "The hotel lobby redesign by Elegant Interiors has received countless compliments from our guests. They captured the essence of luxury and comfort we wanted to convey. Highly recommended!",
+    rating: 5
+  },
+  {
+    id: 4,
+    name: "Hari Krishna",
+    role: "Restaurant Owner",
+    company: "Coconut Grove",
+    content: "The restaurant interior design created the perfect ambiance for our dining concept. Customer feedback has been overwhelmingly positive, and we've seen a significant increase in return visits.",
+    rating: 5
+  },
+  {
+    id: 5,
+    name: "Keerthi",
+    role: "Marketing Director",
+    company: "StyleEdge Retail",
+    content: "Elegant Interiors understood our brand identity perfectly and translated it into an amazing retail space. The design has significantly improved our customer experience and sales.",
+    rating: 5
+  },
+  {
+    id: 6,
+    name: "Aravind Rajan",
+    role: "Property Developer",
+    company: "Urban Vista Constructions",
+    content: "We've partnered with Elegant Interiors on multiple projects, and they consistently deliver exceptional results. Their designs add tremendous value to our properties.",
+    rating: 5
+  }
+
   ];
 
   const sectionTestimonials = testimonials.length > 0 ? testimonials : defaultTestimonials;

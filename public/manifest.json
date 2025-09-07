@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#F7F5F3",
-  "theme_color": "#FFFFFF",
+  "theme_color": "#f1f1ef",
   "orientation": "portrait-primary",
   "categories": ["lifestyle", "design", "business"],
   "lang": "en",

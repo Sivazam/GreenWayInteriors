@@ -54,7 +54,7 @@ export default function FeaturedProjectsCarousel({ projects = [] }: FeaturedProj
       title: "Restaurant Design",
       category: "hospitality",
       description: "Elegant dining space with ambient atmosphere",
-      image: "/project5.jpg"
+      image: "https://images.unsplash.com/photo-1667388968900-4dc428fedb8c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGludGVyaW9yJTIwZGVzaWduJTIwcmVzdGF1cmFudHxlbnwwfHwwfHx8MA%3D%3D"
     },
     {
       id: 6,

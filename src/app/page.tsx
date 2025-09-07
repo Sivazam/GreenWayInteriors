@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         {/* Black Overlay */}
-        <div className="absolute inset-0 bg-black/70 z-10" />
+        <div className="absolute inset-0 bg-black/55 z-10" />
 
         {/* Hero Content */}
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
@@ -71,7 +71,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-              className="font-body text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed"
+              className="font-body text-lg text-white md:text-xl text-muted-foreground mb-8 leading-relaxed"
             >
               Discover the perfect blend of aesthetics and functionality with our premium interior design services. We create spaces that inspire, comfort, and reflect your unique personality across our Sathupalli and Tadepalligudem locations.
             </motion.p>
