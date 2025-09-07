@@ -220,8 +220,9 @@ export default function Projects() {
               >
                 Get in Touch
               </motion.button>
+            </Link>
             </motion.div>
-          </Link>
+        </div>
       </section>
       
       <Footer />

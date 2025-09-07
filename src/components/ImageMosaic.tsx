@@ -29,7 +29,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Residential", 
       height: "medium" as const,
       imageUrl: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Pexels"
+      photographer: "GWY INT"
     },
     { 
       id: 3, 
@@ -37,7 +37,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Commercial", 
       height: "short" as const,
       imageUrl: "https://images.unsplash.com/photo-1594235045856-a6315f0c4083?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Jason Goodman"
+      photographer: "GWY INT"
     },
     { 
       id: 4, 
@@ -45,7 +45,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Hospitality", 
       height: "tall" as const,
       imageUrl: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Waldemar"
+      photographer: "GWY INT"
     },
     { 
       id: 5, 
@@ -53,7 +53,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Residential", 
       height: "medium" as const,
       imageUrl: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Sidekix Media"
+      photographer: "GWY INT"
     },
     { 
       id: 6, 
@@ -61,7 +61,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Hospitality", 
       height: "short" as const,
       imageUrl: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Unsplash"
+      photographer: "GWY INT"
     },
     { 
       id: 7, 
@@ -69,7 +69,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Residential", 
       height: "medium" as const,
       imageUrl: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Spacejoy"
+      photographer: "GWY INT"
     },
     { 
       id: 8, 
@@ -77,7 +77,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Commercial", 
       height: "tall" as const,
       imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Jason Goodman"
+      photographer: "GWY INT"
     },
     { 
       id: 9, 
@@ -85,7 +85,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       category: "Commercial", 
       height: "medium" as const,
       imageUrl: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
-      photographer: "Unsplash"
+      photographer: "GWY INT"
     },
   ];
 
