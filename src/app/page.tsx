@@ -23,8 +23,8 @@ export default function Home() {
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0">
+        {/* Background Video - Commented out temporarily for testing */}
+        {/* <div className="absolute inset-0 z-0">
           <video
             autoPlay
             muted
@@ -41,14 +41,16 @@ export default function Home() {
             }}
           >
             <source src="/interior-video.webm" type="video/webm" />
-            {/* Fallback image */}
             <img
               src="/interior-fallback.jpg"
               alt="Interior design background"
               className="w-full h-full object-cover"
             />
           </video>
-        </div>
+        </div> */}
+
+        {/* Fallback Background */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-accent/20 to-primary/20" />
 
         {/* Black Overlay */}
         <div className="absolute inset-0 bg-black/55 z-10" />

@@ -28,7 +28,7 @@ export default function Projects() {
       title: "Modern Downtown Loft",
       category: "residential",
       description: "A contemporary urban living space with industrial elements",
-      image: "/project1.jpg",
+      image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Modern", "Urban", "Industrial"]
     },
     {
@@ -36,7 +36,7 @@ export default function Projects() {
       title: "Luxury Hotel Lobby",
       category: "hospitality",
       description: "Elegant and welcoming entrance for a 5-star hotel",
-      image: "/project2.jpg",
+      image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Luxury", "Hospitality", "Grand"]
     },
     {
@@ -44,7 +44,7 @@ export default function Projects() {
       title: "Tech Startup Office",
       category: "office",
       description: "Innovative workspace designed for creativity and collaboration",
-      image: "/project3.jpg",
+      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Modern", "Tech", "Collaborative"]
     },
     {
@@ -52,7 +52,7 @@ export default function Projects() {
       title: "Cozy Family Home",
       category: "residential",
       description: "Warm and inviting family residence with open-concept living",
-      image: "/project4.jpg",
+      image: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Family", "Cozy", "Open-Concept"]
     },
     {
@@ -60,7 +60,7 @@ export default function Projects() {
       title: "Boutique Retail Store",
       category: "commercial",
       description: "Chic shopping space with custom displays and lighting",
-      image: "/project5.jpg",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Retail", "Boutique", "Custom"]
     },
     {
@@ -68,7 +68,7 @@ export default function Projects() {
       title: "Restaurant Interior",
       category: "hospitality",
       description: "Intimate dining space with ambient lighting and acoustics",
-      image: "/project6.jpg",
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Restaurant", "Dining", "Ambient"]
     }
   ];
@@ -140,34 +140,12 @@ export default function Projects() {
               >
                 {/* Project Image */}
                 <div className="relative h-64 overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                        <Eye className="w-8 h-8 text-primary-foreground" />
-                      </div>
-                      <p className="text-muted-foreground">Project Image</p>
-                    </div>
-                  </div>
-                  
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="flex space-x-4">
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="bg-accent text-white p-3 rounded-full"
-                      >
-                        <Eye className="w-5 h-5" />
-                      </motion.button>
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="bg-background text-accent p-3 rounded-full border border-accent"
-                      >
-                        <Heart className="w-5 h-5" />
-                      </motion.button>
-                    </div>
-                  </div>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
+                    loading="lazy"
+                  />
                 </div>
 
                 {/* Project Info */}

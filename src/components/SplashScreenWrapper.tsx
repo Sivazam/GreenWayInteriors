@@ -18,7 +18,7 @@ export default function SplashScreenWrapper({ children }: SplashScreenWrapperPro
     // Simulate loading time
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 2500);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
