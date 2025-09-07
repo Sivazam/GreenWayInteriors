@@ -29,7 +29,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       title: "Luxury Kitchen", 
       category: "Residential", 
       height: "medium" as const,
-      imageUrl: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1613545564245-62b2c9ef8055?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGx1eHVyeSUyMGtpdGNoZW58ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=2000&q=80",
       photographer: "GWY INT"
     },
     { 

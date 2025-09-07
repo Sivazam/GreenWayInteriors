@@ -258,14 +258,15 @@ export default function Home() {
               <span className="text-accent">Greenway Interiors</span>
             </h1>
             
-            {/* <motion.p
+            <motion.p
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               className="font-body text-lg text-white md:text-xl text-muted-foreground mb-8 leading-relaxed"
             >
-              Discover the perfect blend of aesthetics and functionality with our premium interior design services. We create spaces that inspire, comfort, and reflect your unique personality across our Sathupalli and Tadepalligudem locations.
-            </motion.p> */}
+              {/* Discover the perfect blend of aesthetics and functionality with our premium interior design services. We create spaces that inspire, comfort, and reflect your unique personality across our Sathupalli and Tadepalligudem locations. */}
+              Experience the perfect blend of style and comfort with our premium interior design services
+            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
