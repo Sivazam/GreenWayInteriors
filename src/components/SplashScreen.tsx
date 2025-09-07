@@ -54,14 +54,15 @@ export default function SplashScreen({ onLoadingComplete }: SplashScreenProps) {
       <div className="text-center">
         {/* Animated Logo */}
         <motion.div
-          initial={{ scale: 0, rotate: -180 }}
+          initial={{ y: -100 }}
           animate={{ 
-            scale: [0, 1.2, 1],
-            rotate: [-180, 10, 0]
+            y: [0, -30, 0]
           }}
           transition={{ 
             duration: 1.5,
-            ease: "easeOut"
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
           }}
           className="mb-8"
         >
@@ -69,11 +70,11 @@ export default function SplashScreen({ onLoadingComplete }: SplashScreenProps) {
             <motion.div
               animate={{ 
                 scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0]
               }}
               transition={{ 
-                duration: 2,
+                duration: 1.5,
                 repeat: Infinity,
+                repeatType: "reverse",
                 ease: "easeInOut"
               }}
               className="text-5xl font-bold text-accent font-serif"

@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Filter, Eye, Heart } from "lucide-react";
+import Link from "next/link";
 
 export default function Projects() {
   const [currentPath, setCurrentPath] = useState("/projects");
@@ -44,7 +45,7 @@ export default function Projects() {
       title: "Tech Startup Office",
       category: "office",
       description: "Innovative workspace designed for creativity and collaboration",
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      image: "https://images.unsplash.com/photo-1684394160255-1d52e64db562?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       tags: ["Modern", "Tech", "Collaborative"]
     },
     {
@@ -211,14 +212,16 @@ export default function Projects() {
             <p className="font-body text-lg text-muted-foreground mb-8">
               Let's collaborate to create the space of your dreams. Our team is ready to bring your vision to life.
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-accent text-primary-foreground px-8 py-4 rounded-lg font-body font-medium text-lg hover:bg-accent/90 transition-colors"
-            >
-              Get in Touch
-            </motion.button>
-          </motion.div>
+            <Link href="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-accent text-primary-foreground px-8 py-4 rounded-lg font-body font-medium text-lg hover:bg-accent/90 transition-colors"
+              >
+                Get in Touch
+              </motion.button>
+            </motion.div>
+          </Link>
         </div>
       </section>
       

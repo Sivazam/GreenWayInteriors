@@ -5,6 +5,16 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin, ArrowUp, MessageCircle } from "lucide-react";
 
+interface ContactDetail {
+  icon: any;
+  label: string;
+  value?: string;
+  numbers?: Array<{
+    value: string;
+    display: string;
+  }>;
+}
+
 export default function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
@@ -57,7 +67,14 @@ export default function Footer() {
   ];
 
   const contactDetails = [
-    { icon: Phone, label: "Phone", value: "9133012244, 9666612244" },
+    { 
+      icon: Phone, 
+      label: "Phone", 
+      numbers: [
+        { value: "9133012244", display: "9133012244" },
+        { value: "9666612244", display: "9666612244" }
+      ]
+    },
     { icon: Mail, label: "Email", value: "info@greenwayinteriors.com" },
     { icon: Clock, label: "Hours", value: "Mon-Fri: 9AM-6PM, Sat: 10AM-4PM" }
   ];
@@ -197,11 +214,27 @@ export default function Footer() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {contactDetails.map((detail, index) => (
-              <div key={index} className="flex items-center space-x-3">
-                <detail.icon className="w-5 h-5 text-accent flex-shrink-0" />
+              <div key={index} className="flex items-start space-x-3">
+                <detail.icon className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
                 <div>
                   <p className="font-body text-sm text-muted-foreground">{detail.label}</p>
-                  <p className="font-body font-medium text-foreground">{detail.value}</p>
+                  {detail.label === "Phone" ? (
+                    <div className="space-y-1">
+                      {detail.numbers?.map((phone, phoneIndex) => (
+                        <motion.a
+                          key={phoneIndex}
+                          href={`tel:${phone.value}`}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="font-body font-medium text-foreground hover:text-accent transition-colors inline-block cursor-pointer"
+                        >
+                           {phone.display}  | 
+                        </motion.a>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="font-body font-medium text-foreground">{detail.value}</p>
+                  )}
                 </div>
               </div>
             ))}
@@ -215,7 +248,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="text-center sm:text-left">
               <p className="font-body text-sm text-muted-foreground">
-                © {new Date().getFullYear()} Greenway Interiors. All rights reserved.
+                © {new Date().getFullYear()} Greenway Interiors. Built by Harte Labs.
               </p>
             </div>
             <div className="flex items-center space-x-6">

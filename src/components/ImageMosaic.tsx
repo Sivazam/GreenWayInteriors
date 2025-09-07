@@ -36,7 +36,7 @@ export default function ImageMosaic({ images = [] }: ImageMosaicProps) {
       title: "Office Space", 
       category: "Commercial", 
       height: "short" as const,
-      imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
+      imageUrl: "https://images.unsplash.com/photo-1594235045856-a6315f0c4083?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80",
       photographer: "Jason Goodman"
     },
     { 

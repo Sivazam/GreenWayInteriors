@@ -6,9 +6,10 @@ import { Home, Info, FolderOpen, Mail } from "lucide-react";
 
 interface NavigationProps {
   currentPath?: string;
+  isOverHero?: boolean;
 }
 
-export default function Navigation({ currentPath = "/" }: NavigationProps) {
+export default function Navigation({ currentPath = "/", isOverHero = false }: NavigationProps) {
   const navItems = [
     { href: "/", label: "Home", icon: Home },
     { href: "/about", label: "About", icon: Info },
@@ -43,7 +44,7 @@ export default function Navigation({ currentPath = "/" }: NavigationProps) {
               >
                 <span className="text-primary-foreground font-serif font-bold text-lg">G</span>
               </motion.div>
-              <span className="font-serif text-xl font-bold text-foreground">Greenway Interiors</span>
+              <span className={`font-serif text-xl font-bold ${isOverHero ? "text-white" : "text-foreground"}`}>Greenway Interiors</span>
             </Link>
 
             {/* Desktop Nav Links */}
@@ -53,7 +54,7 @@ export default function Navigation({ currentPath = "/" }: NavigationProps) {
                   key={item.href}
                   href={item.href}
                   className={`relative font-body text-sm font-medium transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent rounded px-2 py-1 ${
-                    isActive(item.href) ? "text-accent" : "text-foreground"
+                    isActive(item.href) ? "text-accent" : isOverHero ? "text-white" : "text-foreground"
                   }`}
                   aria-current={isActive(item.href) ? "page" : undefined}
                 >

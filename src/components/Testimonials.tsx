@@ -139,7 +139,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
               animate={{ x: [0, -3200] }}
               transition={{
                 x: {
-                  duration: 30,
+                  duration: 60,
                   repeat: Infinity,
                   ease: "linear"
                 }
@@ -164,7 +164,7 @@ export default function Testimonials({ testimonials = [] }: TestimonialsProps) {
               animate={{ x: [-3200, 0] }}
               transition={{
                 x: {
-                  duration: 35,
+                  duration: 70,
                   repeat: Infinity,
                   ease: "linear"
                 }
